@@ -2,11 +2,13 @@
 # Copyright © 2016 The developers of libertine linux's package musl. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/libertine-linux-packages/musl/master/COPYRIGHT.
 
 
-variant=source
-
 case "$package" in
 	
 	build_musl_cross_make_musl)
+	
+		variant=empty
+		
+		copy_subset="$variant"
 		
 		libertine_compile_build_musl_cross_make_musl()
 		{
@@ -16,6 +18,8 @@ case "$package" in
 	;;
 	
 	build_musl)
+	
+		variant=upstream
 		
 		build_needs tr grep sed cat
 		
@@ -37,6 +41,8 @@ case "$package" in
 	;;
 	
 	musl)
+	
+		variant=upstream
 	
 		libertine_compile_musl()
 		{
