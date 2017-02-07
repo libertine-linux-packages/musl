@@ -7,6 +7,8 @@ case "$package" in
 	build_musl_cross_make_musl)
 	
 		variant=empty
+
+		depends build_busybox
 		
 		copy_subset="$variant"
 		
@@ -20,6 +22,8 @@ case "$package" in
 	build_musl)
 	
 		variant=upstream
+
+		depends build_busybox
 		
 		build_needs tr grep sed cat
 		
@@ -43,7 +47,9 @@ case "$package" in
 	musl)
 	
 		variant=upstream
-	
+
+		depends build_busybox
+		
 		libertine_compile_musl()
 		{
 			core_exitError 1 "Not implemented"
