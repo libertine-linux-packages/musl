@@ -1,3 +1,5 @@
 [submodule "upstream"]
 	path = upstream
-	url = https://github.com/bminor/musl.git
+	url = https://github.com/libertine-linux-clones/musl.git
+	branch = master
+	libertine-linux-upstream = https://github.com/libertine-linux-clones/musl.git
